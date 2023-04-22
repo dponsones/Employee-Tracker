@@ -80,9 +80,9 @@ function viewAllDepartments() {
 // View all roles
 function viewAllRoles() {
   connection.query(
-    `SELECT role.id, role.title, department.name AS department, role.salary
-    FROM role
-    INNER JOIN department ON role.department_id = department.id`,
+    `SELECT job.id, job.title, department.dept_name AS department, job.salary
+    FROM job
+    INNER JOIN department ON job.department_id = department.id`,
     (err, res) => {
       if (err) throw err;
       console.table(res);
@@ -91,14 +91,11 @@ function viewAllRoles() {
   );
 }
 
+
 // View all employees
 function viewAllEmployees() {
   connection.query(
-    `SELECT employee.id, employee.first_name, employee.last_name, role.title AS job_title, department.name AS department, role.salary, CONCAT(manager.first_name, ' ', manager.last_name) AS manager
-    FROM employee
-    INNER JOIN role ON employee.role_id = role.id
-    INNER JOIN department ON role.department_id = department.id
-    LEFT JOIN employee manager ON employee.manager_id = manager.id`,
+    'SELECT employee.id, first_name, last_name, title, salary, dept_name, manager_id FROM ((department JOIN job ON department.id = job.department_id) JOIN employee ON job.id = employee.job_id);',
     (err, res) => {
       if (err) throw err;
       console.table(res);
@@ -106,6 +103,7 @@ function viewAllEmployees() {
     }
   );
 }
+
 
 // Add a department
 function addDepartment() {
@@ -178,5 +176,4 @@ function addRole() {
       });
   });
 }
-
 start();

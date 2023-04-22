@@ -2,14 +2,14 @@ INSERT INTO department (dept_name)
 VALUES 
 ('Management'),
 ('Sales'),
-('Accounting');
+('Accounting'),
 ('Customer Service');
 
 
 INSERT INTO job (title, salary, department_id)
 VALUES 
 ('Branch Manager', 175000, 1),
-('Assistant to the Regional Manager', 45000, 2),
+('Assistant to Regional Manager', 45000, 2),
 ('Salesman', 100000, 2),
 ('Accountant', 80000, 3),
 ('Customer Service Specialist', 55000, 4),
