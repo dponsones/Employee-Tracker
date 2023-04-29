@@ -6,6 +6,8 @@ This project focuses on a command-line application that can manage a company's e
 
 You’ll need to use the [MySQL2 package](https://www.npmjs.com/package/mysql2) to connect to your MySQL database and perform queries, the [Inquirer package](https://www.npmjs.com/package/inquirer/v/8.2.4) to interact with the user via the command line, and the [console.table package](https://www.npmjs.com/package/console.table) to print MySQL rows to the console.
 
+To begin first run MYSQL and source the schema file with the seeds then you can begin the application with NPM START.
+
 ## Links
 The following link shows the functionality of application from the command-line: https://drive.google.com/file/d/1MPfhBnXnLIlCoIteuVDQ_Z0cr55xoQDi/view?usp=sharing
-Github repo:
+Github repo: https://github.com/dponsones/Employee-Tracker.git
